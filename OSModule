@@ -1,0 +1,11 @@
+//Importing the os mod
+var os=require('os')
+
+// Find the architecture of system
+console.info(os.arch())   // 64 BIT or 32  bit
+console.info(os.platform()) // mac/ win/ linux
+console.info(os.freemem()) // free memorey
+console.info(os.totalmem()) // total memorey
+console.info(os.homedir()) // home directory name
+console.info(os.hostname()) /// host name
+console.info(os.tmpdir()) //temp directorey
