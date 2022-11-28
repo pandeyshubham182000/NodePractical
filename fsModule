@@ -1,0 +1,48 @@
+// Importing file system
+var fs=require('fs')
+
+
+
+
+//CRUD IN FS
+/* 
+1) Create a folder 'shubham'
+2) create a file 'shubha.txt'
+3) write some data in the file
+4) append more data
+5) rename the file "shubham1.txt"
+6) delete the file both
+
+7) Read the data of file "bio.txt"
+8) fetch last 5 chars
+*/
+
+
+
+
+
+//1) Create a folder 'shubham'
+//fs.mkdirSync("Shubham")
+
+//2,3)create a file 'shubha.txt'
+//fs.writeFileSync("Shubham/Shubham.txt","hi i am shubham pandey")
+
+//4)append more data
+//fs.appendFileSync("Shubham/Shubham.txt"," Where are you brother happy day")
+
+//5) rename file
+//fs.renameSync("Shubham/Shubham.txt","Shubham/Shubham1.txt")
+
+//6) Delete the file
+//fs.unlinkSync("Shubham/Shubham1.txt")
+
+//7) Delete the folder
+//fs.rmdirSync("Shubham")
+
+//8) reading the file
+var buffer=fs.readFileSync("bio.txt")
+console.info(buffer)    // o/p will be binary buffer data (<Buffer 20 73 68 75 62 />)
+console.info(buffer.toString()) //o/p is string written in file (hi i am shubham pandey from gorakhpur up) 
+
+//9) fetch the last 10 chars of file
+console.info(buffer.slice(-10).toString())
