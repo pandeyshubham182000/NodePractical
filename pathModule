@@ -1,0 +1,11 @@
+// importing path module
+var path=require('path')
+
+//path = https://www.github.com/wearehere
+
+// functionallity
+var pat="https://nodejs.org/api/path.html"
+console.info(path.basename(pat))
+console.info(path.extname(pat))
+console.info(path.dirname(pat))
+console.info(path.parse(pat))  // explain everything in given url in json format
