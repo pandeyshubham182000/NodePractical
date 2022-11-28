@@ -1,62 +1,17 @@
-/*
-var mongoose = require('mongoose')
+//importing the http module
+var http=require('http')
 
-// establish the connection
-var db = mongoose.connection
-
-// getting dburl
-const dburl = "mongodb+srv://shubham:LY4hqyuCZyjmknQG@cluster0.3ht8gg6.mongodb.net/Employee?retryWrites=true&w=majority"
-
-// defining connection params
-var connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}
-
-//connectingg to the database
-mongoose.connect(dburl, connectionParams, (err) => {
-    if (err) {
-        console.info("connect to internet guys")
-    }
-    else {
-        console.info("Connected to the database")
-    }
+// creating the server
+var server=http.createServer((req,res)=>{
+    res.setHeader("Content-Type","HTML/CSS")
+    res.end("Hello abhay here !")
 })
 
-/* making the data to insert in the mongo
-data = [
-    {
-        "name": "Shalu",
-        "course": "BTECH",
-        "branch": "CSE"
-    },
-    {
-        "name": "Abhay",
-        "course": "BTECH",
-        "branch": "CSE"
-    },
-    {
-        "name": "Satyam",
-        "course": "BTECH",
-        "branch": "CSE"
-    }
-]
-
-// inserting many record
-db.collection("Employee").insertMany(data, (err) => {
-    if (err) {
-        console.info("Not inserted")
-    } else {
-        console.info("Inserted ......")
-    }
-})*/
-
-/*deleting the records
-db.collection('Employee').deleteOne({"name":"shubham"},(err)=>{
+// Listening on the port no.
+server.listen(8000,(err)=>{
     if(err){
-        console.info("Not de")
+        console.info(" its error ",err)
+    }else{
+        console.info("connected at port 8000 ...")
     }
-    else{
-        console.info("Record deleted .....")
-    }
-})*/ 
+})
