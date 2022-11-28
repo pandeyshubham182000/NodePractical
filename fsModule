@@ -1,9 +1,6 @@
 // Importing file system
 var fs=require('fs')
 
-
-
-
 //CRUD IN FS
 /* 
 1) Create a folder 'shubham'
@@ -16,10 +13,6 @@ var fs=require('fs')
 7) Read the data of file "bio.txt"
 8) fetch last 5 chars
 */
-
-
-
-
 
 //1) Create a folder 'shubham'
 //fs.mkdirSync("Shubham")
@@ -40,9 +33,10 @@ var fs=require('fs')
 //fs.rmdirSync("Shubham")
 
 //8) reading the file
-var buffer=fs.readFileSync("bio.txt")
+var buffer=fs.readFileSync("bio.txt") // readFileSync("bio.txt","utf-8") will give you text data
 console.info(buffer)    // o/p will be binary buffer data (<Buffer 20 73 68 75 62 />)
 console.info(buffer.toString()) //o/p is string written in file (hi i am shubham pandey from gorakhpur up) 
 
 //9) fetch the last 10 chars of file
-console.info(buffer.slice(-10).toString())
+console.info(buffer.slice(-10).toString()) // return last 5 char of file
+console.info(buffer.slice(5,15).toString()) // retiurn 5 to 15 char of file
